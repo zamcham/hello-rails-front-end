@@ -6,11 +6,10 @@ function GreetingsComponent() {
 
   useEffect(() => {
     axios.get('http://localhost:3000/api/v1/greetings')
-      .then(response => {
-        // Access the 'text' field from the API response
+      .then((response) => {
         setGreetings(response.data.text);
       })
-      .catch(error => {
+      .catch((error) => {
         console.error(error);
       });
   }, []);
