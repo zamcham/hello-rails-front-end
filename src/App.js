@@ -1,14 +1,18 @@
 import './App.css';
-import GreetingsComponent from './components/GreetingsComponent';
+import { Provider } from 'react-redux';
+import store from './redux/store';
+import Greeting from './components/Greeting';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1>Refresh for a new greeting</h1>
-        <GreetingsComponent />
-      </header>
-    </div>
+    <Provider store={store}>
+      <div className="App">
+        <header className="App-header">
+          <h1>Refresh for a new greeting</h1>
+          <Greeting />
+        </header>
+      </div>
+    </Provider>
   );
 }
 
